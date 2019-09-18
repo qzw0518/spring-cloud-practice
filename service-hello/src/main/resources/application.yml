@@ -1,0 +1,12 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: hello-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
+#  instance:   //服务提供者维护“心跳”告诉Eureka Server自己还活着，避免被剔除
+#    lease-expiration-duration-in-seconds: 90 //服务失效时间90s
+#    lease-renewal-interval-in-seconds: 30 //续约任务调用事件间隔30s

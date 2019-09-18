@@ -1,0 +1,11 @@
+server:
+  port: 7001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
+    fetch-registry: false  #获取服务列表，测试注册中心集群用注释掉
+    register-with-eureka: false  #向服务中心注册，测试注册中心集群用注释掉
+spring:
+  application:
+    name: eureka-registry

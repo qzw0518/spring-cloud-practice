@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 5555
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
+
+zuul:
+  routes:
+#    api-a-url:
+#      path: /api-a-url/**
+#      url: http://localhost:8011/
+
+    api-a:
+      path: /api-a/**
+      serviceId: hello-service
+
+    api-b:
+      path: /api-b/**
+      serviceId: feign-consumer
+#      sensitiveHeaders:    #指定路由敏感信息头设置
+#      retryable: false   #指定路由重试机制开关
+#      strip-prefix: true  #指定路由去除访问路径前缀
+
+#  strip-prefix: true   #全局去除访问路径前缀
+#  prefix: /api     #全局为访问路径加上前缀
+#  add-host-header: true    #解决认证之后跳转到具体Web实例访问路径而非网关中的访问路径
+#  retryable: false     #全局请求重试机制开关
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000   #路由调用服务的超时时间
+
+ribbon:
+  ConnectTimeout: 1000    #建立连接的超时时间,设置小于hystrix超时时间时，若请求超过该时间，将重试请求
+  ReadTimeout: 2000   #处理请求超时时间,设置小于hystrix超时时间时，若请求超过该时间，将重试请求
+
+
+
