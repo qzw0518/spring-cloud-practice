@@ -6,7 +6,7 @@ spring:
       server:
         git:
           uri: https://github.com/qzw0518/spring-cloud-practice.git
-          search-paths: configFolder
+          search-paths: config-server/configFolder
           username: qiwonder@163.com
           password: qizhiwen945
 server:
