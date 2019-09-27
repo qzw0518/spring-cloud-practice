@@ -15,10 +15,6 @@ public class ZuulApplication {
 		SpringApplication.run(ZuulApplication.class, args);
 	}
 
-	@Bean
-	public AccessFilter accessFilter(){  //过滤器
-		return new AccessFilter();
-	}
 
 	@Bean
 	public PatternServiceRouteMapper serviceRouteMapper() {  //自定义路由映射规则
