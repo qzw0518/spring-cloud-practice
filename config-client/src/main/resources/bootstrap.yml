@@ -1,0 +1,23 @@
+server:
+  port: 10002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
+
+spring:
+  application:
+    name: didispace
+  cloud:
+    config:
+      profile: dev
+      label: master
+      username: user
+      password: user
+      discovery:
+        enabled: true
+        service-id: config-server
+
+
+

@@ -9,6 +9,16 @@ spring:
           search-paths: config-server/configFolder
           username: qiwonder@163.com
           password: qizhiwen945
+  security:
+    user:
+      name: user
+      password: user
 server:
   port: 10001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
+
 
