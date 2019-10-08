@@ -14,11 +14,17 @@ spring:
       name: user
       password: user
 server:
-  port: 10001
+  port: 11001
 
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:7001/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
 
 

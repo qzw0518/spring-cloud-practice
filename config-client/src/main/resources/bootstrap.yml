@@ -18,6 +18,17 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: springcloud
+    password: springcloud
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
 
 
 
